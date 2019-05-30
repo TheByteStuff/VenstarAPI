@@ -3,6 +3,20 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+.gitignore.bak
+src/.vs
+src/VenstarAPIReferenceCalls/bin
+src/VenstarAPIReferenceCalls/obj
+src/VenstarAPI/bin
+src/VenstarAPI/obj
+src/VenstarAPI/VenstarAPI.nuspec.bak
+src/VenstarAPI/NuGetCommandLine.txt
+src/VenstarAPI/NuGetCommandLine.txt.bak
+src/TestResults
+
+README.md.bak
+
+
 # User-specific files
 *.rsuser
 *.suo

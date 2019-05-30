@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VenstarAPI", "VenstarAPI\VenstarAPI.csproj", "{C5EEDCD7-7B32-4756-A05F-B0D94AB4EC26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VenstarAPIReferenceCalls", "VenstarAPIReferenceCalls\VenstarAPIReferenceCalls.csproj", "{B4E06135-710A-4056-81E4-D2682DE22571}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5121824A-ABDA-4940-A1FF-90E31F4241E8}"
+	ProjectSection(SolutionItems) = preProject
+		README.txt = README.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5EEDCD7-7B32-4756-A05F-B0D94AB4EC26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5EEDCD7-7B32-4756-A05F-B0D94AB4EC26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5EEDCD7-7B32-4756-A05F-B0D94AB4EC26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5EEDCD7-7B32-4756-A05F-B0D94AB4EC26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4E06135-710A-4056-81E4-D2682DE22571}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4E06135-710A-4056-81E4-D2682DE22571}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4E06135-710A-4056-81E4-D2682DE22571}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4E06135-710A-4056-81E4-D2682DE22571}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {00A70BB6-CA08-4D26-8912-546D1D18ABD8}
+	EndGlobalSection
+EndGlobal

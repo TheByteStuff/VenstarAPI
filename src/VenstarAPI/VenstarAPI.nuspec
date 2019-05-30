@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>TheByteStuff.VenstarAPI</id>
+    <version>1.0.0</version>
+    <title>Log4NetAppenders</title>
+    <authors>The Byte Stuff, LLC</authors>
+    <owners>The Byte Stuff, LLC</owners>
+    <licenseUrl>https://github.com/TheByteStuff/VenstarAPI/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/TheByteStuff/VenstarAPI</projectUrl>
+<!--    
+    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+-->    
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Object model and API helper definition for working with a Venstar Smart Thermostat over the local API.
+    The code for this project was developed/tested against a Venstar Colortouch model T7900.
+    The Byte Stuff, LLC is not afailiated with Venstar nor has Venstar endorsed this project.</description>
+    <releaseNotes>Initial Release including support for use with a Thermostat Local API in unsecure/http mode.</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>Venstar VenstarAPI localapi HomeAutomation</tags>
+  </metadata>
+</package>
+
