@@ -13,8 +13,31 @@ namespace com.thebytestuff.VenstarAPIReferenceCalls
         public static void Main(string[] args)
         {
             Console.WriteLine("start");
-            VenstarAPIHelper helper = VenstarAPIHelper.CreateHelper("http://192.168.21.130");
 
+            VenstarAPIReferenceCalls me = new VenstarAPIReferenceCalls();
+            //*/
+            me.ReferenceCallsSecure();
+            /*/
+            me.ReferenceCallsUnsecure();
+            //*/
+
+            Console.WriteLine("end");
+        }
+
+        private void ReferenceCallsUnsecure()
+        {
+            VenstarAPIHelper helper = VenstarAPIHelper.CreateHelper("http://192.168.21.130");
+            ReferenceCallsBase(helper);
+        }
+
+        private void ReferenceCallsSecure()
+        {
+            VenstarAPIHelper helper = VenstarAPIHelper.CreateSecureHelper("https://192.168.21.130", "ADMIN", "ADMIN");
+            ReferenceCallsBase(helper);
+        }
+
+        private void ReferenceCallsBase(VenstarAPIHelper helper)
+        {
             ThermostatBaseInfo baseinfo = helper.GetThermostatBaseInfo();
             Thermostat stat = helper.GetThermostatDetailInfo();
             Alerts alerts = helper.GetAlerts();
@@ -23,9 +46,11 @@ namespace com.thebytestuff.VenstarAPIReferenceCalls
 
             ThermostatUpdate Update = new ThermostatUpdate
             {
-                HeatTemperatureTarget = stat.HeatTemperatureTarget+ 2
-                ,CoolTemperatureTarget = stat.CoolTemperatureTarget-2
-                ,Mode = ThermostatMode.Heat
+                HeatTemperatureTarget = stat.HeatTemperatureTarget + 2
+                ,
+                CoolTemperatureTarget = stat.CoolTemperatureTarget - 2
+                ,
+                Mode = ThermostatMode.Heat
                 //,Pin = "" //Required if Pin set on thermostat
             };
             bool Update1Result = helper.UpdateThermostat(Update);
@@ -34,23 +59,27 @@ namespace com.thebytestuff.VenstarAPIReferenceCalls
 
             ThermostatUpdate Update2 = new ThermostatUpdate
             {
-                HeatTemperatureTarget = stat.HeatTemperatureTarget+2
-                ,CoolTemperatureTarget = stat.CoolTemperatureTarget-2
-                ,Mode = ThermostatMode.Cool
-                ,FanSetting = FanSetting.Auto
+                HeatTemperatureTarget = stat.HeatTemperatureTarget + 2
+                ,
+                CoolTemperatureTarget = stat.CoolTemperatureTarget - 2
+                ,
+                Mode = ThermostatMode.Cool
+                ,
+                FanSetting = FanSetting.Auto
                 //,Pin = "" //Required if Pin set on thermostat
             };
-            bool Update2Result =helper.UpdateThermostat(Update2);
+            bool Update2Result = helper.UpdateThermostat(Update2);
 
             ThermostatUpdate Update3 = new ThermostatUpdate
             {
                 HeatTemperatureTarget = stat.HeatTemperatureTarget
-                ,CoolTemperatureTarget = stat.CoolTemperatureTarget
-                ,Pin = "BadPin"
+                ,
+                CoolTemperatureTarget = stat.CoolTemperatureTarget
+                ,
+                Pin = "BadPin"
             };
             bool Update3Result = helper.UpdateThermostat(Update3);
 
-            Console.WriteLine("end");
         }
     }
 }

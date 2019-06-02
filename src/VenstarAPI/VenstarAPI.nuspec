@@ -2,8 +2,8 @@
 <package >
   <metadata>
     <id>TheByteStuff.VenstarAPI</id>
-    <version>1.0.0</version>
-    <title>Log4NetAppenders</title>
+    <version>2.0.0</version>
+    <title>VenstarAPI</title>
     <authors>The Byte Stuff, LLC</authors>
     <owners>The Byte Stuff, LLC</owners>
     <licenseUrl>https://github.com/TheByteStuff/VenstarAPI/blob/master/LICENSE</licenseUrl>
@@ -12,12 +12,23 @@
     <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
 -->    
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Object model and API helper definition for working with a Venstar Smart Thermostat over the local API.
+    <description>
+    Object model and API helper definition for working with a Venstar Smart Thermostat over the local API.
     The code for this project was developed/tested against a Venstar Colortouch model T7900.
-    The Byte Stuff, LLC is not afailiated with Venstar nor has Venstar endorsed this project.</description>
-    <releaseNotes>Initial Release including support for use with a Thermostat Local API in unsecure/http mode.</releaseNotes>
+    The Byte Stuff, LLC is not afailiated with Venstar nor has Venstar endorsed this project.
+    
+    Includes support for use with a Thermostat Local API in unsecure/http as well as secure/https mode.
+
+    Use of this software is free.  
+
+    Suggestions or donations are both appreciated and welcome can be made by using the "Contact" tab at https://www.thebytestuff.com/?utm_source=nuget&amp;utm_medium=www&amp;utm_campaign=VenstarAPI
+    </description>
+    <releaseNotes>Updated description, added secure/https support.</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>Venstar VenstarAPI localapi HomeAutomation</tags>
+    <dependencies>
+	  <dependency id="Newtonsoft.Json" version="12.0.2" />
+	  <dependency id="RestSharp" version="106.6.9" />
+    </dependencies>    
   </metadata>
 </package>
-

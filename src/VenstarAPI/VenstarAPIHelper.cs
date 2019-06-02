@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Security;
 
 using System.Net;
+using System.Net.Http;
 using System.Net.Sockets;
 
 using Newtonsoft.Json;
@@ -16,9 +18,11 @@ namespace com.thebytestuff.VenstarAPI
     public class VenstarAPIHelper
     {
         private string URL;
-        private string UserId;
-        private string Password;
         private RestClient client;
+
+
+        private NetworkCredential NetworkCredential;
+        private CredentialCache CredentialCache;
 
         private VenstarAPIHelper(string url)
         {
@@ -29,22 +33,34 @@ namespace com.thebytestuff.VenstarAPI
 
         private VenstarAPIHelper(string url, string user, string password): this(url)
         {
-            UserId = user;
-            Password = password;
+            NetworkCredential = new NetworkCredential(user, password);
         }
 
         public static VenstarAPIHelper CreateHelper(string url)
         {
-            VenstarAPIHelper me = new VenstarAPIHelper(url);
-            return me;
+            return new VenstarAPIHelper(url);
         }
 
+        /*
+         * Reference https://stickler.de/en/information/code-snippets/httpwebrequest-with-digest-authentication-c-csharp
+         * for setting up the Digest authentication
+         */
         public static VenstarAPIHelper CreateSecureHelper(string url, string user, string password)
         {
+            /*/
             throw new Exception("Not yet implemented");
-            
-            //VenstarAPIHelper me = new VenstarAPIHelper(url, user, password);
-            //return me;
+            /*/
+            ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) => true;
+            VenstarAPIHelper me = new VenstarAPIHelper(url, user, password);
+            RestClient client = new RestClient(url)
+            {
+            };
+            RestRequest dummy = new RestRequest(Method.GET);
+            dummy.Resource = "";
+            me.CredentialCache = new CredentialCache();
+            me.CredentialCache.Add(client.BuildUri(dummy), "Digest", me.NetworkCredential);
+            return me;
+            //*/
         }
 
 
@@ -53,7 +69,8 @@ namespace com.thebytestuff.VenstarAPI
             var request = new RestRequest()
             {
                 Method = Method.GET,
-                Resource = ""
+                Resource = "",
+                Credentials= CredentialCache
             };
 
             IRestResponse response = client.Execute(request);
@@ -68,7 +85,8 @@ namespace com.thebytestuff.VenstarAPI
             var request = new RestRequest()
             {
                 Method = Method.GET,
-                Resource = "query/info"
+                Resource = "query/info",
+                Credentials = CredentialCache
             };
 
             IRestResponse response = client.Execute(request);
@@ -83,7 +101,8 @@ namespace com.thebytestuff.VenstarAPI
             var request = new RestRequest()
             {
                 Method = Method.GET,
-                Resource = "query/alerts"
+                Resource = "query/alerts",
+                Credentials = CredentialCache
             };
 
             IRestResponse response = client.Execute(request);
@@ -98,7 +117,8 @@ namespace com.thebytestuff.VenstarAPI
             var request = new RestRequest()
             {
                 Method = Method.GET,
-                Resource = "query/sensors"
+                Resource = "query/sensors",
+                Credentials = CredentialCache
             };
 
             IRestResponse response = client.Execute(request);
@@ -113,7 +133,8 @@ namespace com.thebytestuff.VenstarAPI
             var request = new RestRequest()
             {
                 Method = Method.GET,
-                Resource = "query/runtimes"
+                Resource = "query/runtimes",
+                Credentials = CredentialCache
             };
 
             IRestResponse response = client.Execute(request);
@@ -128,7 +149,8 @@ namespace com.thebytestuff.VenstarAPI
             var update = new RestRequest()
             {
                 Method = Method.POST,
-                Resource = "control"
+                Resource = "control",
+                Credentials = CredentialCache
             };
             update.AddHeader("Content-Type", "application/x-www-form-urlencoded");
 
@@ -153,23 +175,5 @@ namespace com.thebytestuff.VenstarAPI
 
             return (content.Contains("success"));
         }
-
-        /*
-         * 
-         * "Digest username=\"ADMIN\", realm=\"thermostat\", nonce=\"1558545171\", uri=\"/control\", algorithm=MD5, response=\"066772cead98b5867bd550930315dec5\", opaque=\"\", qop=auth, nc=00000005, cnonce=\"9757159\""
-         * 
-         * "Digest 
-         *      username=\"ADMIN\", 
-         *      realm=\"thermostat\", 
-         *      nonce=\"1558545171\", 
-         *      uri=\"/control\", 
-         *      algorithm=MD5, 
-         *      response=\"066772cead98b5867bd550930315dec5\", 
-         *      opaque=\"\", 
-         *      qop=auth, 
-         *      nc=00000005, 
-         *      cnonce=\"9757159\""
-         */
-
     }
 }
