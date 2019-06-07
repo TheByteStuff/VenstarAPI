@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>TheByteStuff.VenstarAPI</id>
-    <version>2.0.0</version>
+    <version>2.0.1</version>
     <title>VenstarAPI</title>
     <authors>The Byte Stuff, LLC</authors>
     <owners>The Byte Stuff, LLC</owners>
@@ -23,7 +23,7 @@
 
     Suggestions or donations are both appreciated and welcome can be made by using the "Contact" tab at https://www.thebytestuff.com/?utm_source=nuget&amp;utm_medium=www&amp;utm_campaign=VenstarAPI
     </description>
-    <releaseNotes>Updated description, added secure/https support.</releaseNotes>
+    <releaseNotes>Added GetURL to helper.</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>Venstar VenstarAPI localapi HomeAutomation</tags>
     <dependencies>

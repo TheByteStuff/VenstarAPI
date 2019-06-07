@@ -11,9 +11,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="NuGetCommandLine.txt.bak" />
     <None Remove="TheByteStuff.VenstarAPI.1.0.0.nupkg" />
     <None Remove="TheByteStuff.VenstarAPI.1.0.1.nupkg" />
     <None Remove="TheByteStuff.VenstarAPI.2.0.0.nupkg" />
+    <None Remove="TheByteStuff.VenstarAPI.2.0.1.nupkg" />
     <None Remove="VenstarAPI.csproj.bak" />
     <None Remove="VenstarAPI.nuspec" />
   </ItemGroup>
