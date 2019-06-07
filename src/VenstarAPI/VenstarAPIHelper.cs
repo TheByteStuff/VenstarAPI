@@ -20,7 +20,6 @@ namespace com.thebytestuff.VenstarAPI
         private string URL;
         private RestClient client;
 
-
         private NetworkCredential NetworkCredential;
         private CredentialCache CredentialCache;
 
@@ -63,6 +62,10 @@ namespace com.thebytestuff.VenstarAPI
             //*/
         }
 
+        public string GetURL()
+        {
+            return URL;
+        }
 
         public ThermostatBaseInfo GetThermostatBaseInfo()
         {
