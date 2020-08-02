@@ -5,6 +5,7 @@
 
 .gitignore.bak
 src/.vs
+src/.axoCover
 src/VenstarAPIReferenceCalls/bin
 src/VenstarAPIReferenceCalls/obj
 src/VenstarAPI/bin
