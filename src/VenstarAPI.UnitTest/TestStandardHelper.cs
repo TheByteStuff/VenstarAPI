@@ -30,6 +30,13 @@ namespace VenstarAPI.UnitTest
             WebService.StopWebServer();
         }
 
+        [TestMethod]
+        public void Test_GetURL()
+        {
+            VenstarAPIHelper helper = VenstarAPIHelper.CreateHelper(VenstarClient);
+            Assert.AreEqual("http://127.0.0.1:8080", helper.GetURL());
+        }
+
 
         [TestMethod]
         public void TestUnsecure_GetThermostatBaseInfo()
