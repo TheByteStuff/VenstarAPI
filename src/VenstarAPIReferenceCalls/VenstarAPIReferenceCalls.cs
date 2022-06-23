@@ -10,6 +10,8 @@ namespace com.thebytestuff.VenstarAPIReferenceCalls
 {
     public class VenstarAPIReferenceCalls
     {
+        string ThermostatPin = "";
+
         public static void Main(string[] args)
         {
             Console.WriteLine("start");
@@ -51,7 +53,7 @@ namespace com.thebytestuff.VenstarAPIReferenceCalls
                 CoolTemperatureTarget = stat.CoolTemperatureTarget - 2
                 ,
                 Mode = ThermostatMode.Heat
-                //,Pin = "" //Required if Pin set on thermostat
+                ,Pin = ThermostatPin //Required if Pin set on thermostat
             };
             bool Update1Result = helper.UpdateThermostat(Update);
 
@@ -66,7 +68,7 @@ namespace com.thebytestuff.VenstarAPIReferenceCalls
                 Mode = ThermostatMode.Cool
                 ,
                 FanSetting = FanSetting.Auto
-                //,Pin = "" //Required if Pin set on thermostat
+                ,Pin = ThermostatPin //Required if Pin set on thermostat
             };
             bool Update2Result = helper.UpdateThermostat(Update2);
 

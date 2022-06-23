@@ -5,14 +5,14 @@
     <DebugType>Full</DebugType>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <PackageId>TheByteStuff.VenstarAPI</PackageId>
-    <Version>3.0.0</Version>
+    <Version>3.2.0</Version>
     <Authors>The Byte Stuff, LLC</Authors>
     <PackageProjectUrl>https://github.com/TheByteStuff/VenstarAPI</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/TheByteStuff/VenstarAPI/blob/master/LICENSE</PackageLicenseUrl>
     <PackageTags>Venstar VenstarAPI localapi HomeAutomation</PackageTags>
     <RepositoryUrl>https://github.com/TheByteStuff/VenstarAPI</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <Copyright>2019-2020</Copyright>
+    <Copyright>2019-2022</Copyright>
     <Description>Object model and API helper definition for working with a Venstar Smart Thermostat over the local API.   The code for this project was developed/tested against a Venstar Colortouch model T7900.  The Byte Stuff, LLC is not afailiated with Venstar nor has Venstar endorsed this project.
     
 Includes support for use with a Thermostat Local API in unsecure/http as well as secure/https mode.
@@ -22,9 +22,11 @@ Use of this software is free.
 Suggestions or donations are both appreciated and welcome can be made by using the "Contact" tab at https://www.thebytestuff.com/?utm_source=nuget&amp;amp;utm_medium=www&amp;amp;utm_campaign=VenstarAPI
 </Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageReleaseNotes>Change from .NetFramework to .NetStandard, change licensing from Apache to MIT</PackageReleaseNotes>
+    <PackageReleaseNotes>Upgrade to Newtonsoft.Json 13.0.1 per security vulnerability concern.</PackageReleaseNotes>
     <PackageIconUrl>https://github.com/TheByteStuff/VenstarAPI/blob/master/src/VenstarAPI/CardFront_Clip.ico</PackageIconUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <AssemblyVersion>3.2.0.0</AssemblyVersion>
+    <FileVersion>3.2.0.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -38,7 +40,7 @@ Suggestions or donations are both appreciated and welcome can be made by using t
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="RestSharp" Version="106.6.9" />
   </ItemGroup>
 
