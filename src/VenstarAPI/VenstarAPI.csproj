@@ -5,7 +5,7 @@
     <DebugType>Full</DebugType>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <PackageId>TheByteStuff.VenstarAPI</PackageId>
-    <Version>3.2.0</Version>
+    <Version>3.3.0</Version>
     <Authors>The Byte Stuff, LLC</Authors>
     <PackageProjectUrl>https://github.com/TheByteStuff/VenstarAPI</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/TheByteStuff/VenstarAPI/blob/master/LICENSE</PackageLicenseUrl>
@@ -22,11 +22,11 @@ Use of this software is free.
 Suggestions or donations are both appreciated and welcome can be made by using the "Contact" tab at https://www.thebytestuff.com/?utm_source=nuget&amp;amp;utm_medium=www&amp;amp;utm_campaign=VenstarAPI
 </Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageReleaseNotes>Upgrade to Newtonsoft.Json 13.0.1 per security vulnerability concern.</PackageReleaseNotes>
+    <PackageReleaseNotes>Upgrade to Newtonsoft.Json 13.0.2 and RestSharp 106.15.0 per security vulnerability concern.</PackageReleaseNotes>
     <PackageIconUrl>https://github.com/TheByteStuff/VenstarAPI/blob/master/src/VenstarAPI/CardFront_Clip.ico</PackageIconUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <AssemblyVersion>3.2.0.0</AssemblyVersion>
-    <FileVersion>3.2.0.0</FileVersion>
+    <AssemblyVersion>3.3.0.0</AssemblyVersion>
+    <FileVersion>3.3.0.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -40,8 +40,8 @@ Suggestions or donations are both appreciated and welcome can be made by using t
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="RestSharp" Version="106.6.9" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="RestSharp" Version="106.15.0" />
   </ItemGroup>
 
 </Project>
